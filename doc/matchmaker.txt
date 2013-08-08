@@ -24,6 +24,9 @@ There's only one command (well, sort of two) and it toggles the behaviour.
                                                 *matchmaker-:Matchmaker!*
 :Matchmaker!            Disable matchmaker.
 
+                                                *matchmaker-:MatchmakerToggle*
+:MatchmakerToggle       Toggle matchmaker.
+
 CONFIGURATION                                   *matchmaker-configuration*
 
 No configuration is strictly necessary, but matchmaker can be configured on a 
@@ -40,10 +43,24 @@ As an example, matchmaker's default needle function would look like this: >
 
                             *matchmaker-startup* *g:matchmaker_enable_startup*
 
-To enable matchmaker when Vim starts, add the following to your vimrc: >
-    let g:matchmaker_enable_startup = 1
-<
+    let g:matchmaker_enable_startup = 0
 
+Set this to 1 in order to enable matchmaker when vim starts.
+
+============-
+
+    nnoremap <silent> <space>m :MatchmakerToggle<CR>
+
+Bind <space>m to toggle matchmaker
+
+                                                *matchmaker-highlight*
+
+Matchmaker defines the "Matchmaker" highlight group, which you can configure 
+to your liking. See |:highlight| for how to do that.
+
+ABOUT                                           *matchmaker-about*
+
+Get the latest version, report issues, and submit your changes on GitHub:
                                                 *matchmaker-highlight*
 
 Matchmaker defines the "Matchmaker" highlight group, which you can configure 
