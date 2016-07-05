@@ -80,16 +80,19 @@ endfunction
 function! s:matchmake(needle)
     if !s:is_enabled()
         return
-    elseif s:is_new_needle(a:needle)
-        if empty(a:needle)
-            call s:matchunmake()
-            return
-        endif
+    endif
+
+    if empty(a:needle)
         call s:matchunmake()
-        let w:matchmaker_needle = a:needle
-    else
         return
     endif
+
+    if !s:is_new_needle(a:needle)
+        return
+    endif
+
+    call s:matchunmake()
+    let w:matchmaker_needle = a:needle
     call s:highlight(w:matchmaker_needle)
 endfunction
 
