@@ -67,7 +67,9 @@ function! s:default_needle()
     if mode() == 'v'
         return '\V\<'.escape(s:get_visual_selection(), '\').'\>'
     else
-        return '\V\<'.escape(expand('<cword>'), '\').'\>'
+        if getline(".")[col(".")-1] !~# '[[:punct:][:blank:]]' 
+            return '\V\<'.escape(expand('<cword>'), '\').'\>'
+        endif
     endif
 endfunction
 
