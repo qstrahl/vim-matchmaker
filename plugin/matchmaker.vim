@@ -33,6 +33,7 @@ function! s:highlight(needle)
 endfunction
 
 function! s:matchunmake()
+    "Decho "matchunmake"
     if exists('w:matchmaker_needle')
         unlet w:matchmaker_needle
     endif
@@ -67,7 +68,8 @@ function! s:default_needle()
     if mode() == 'v'
         return '\V\<'.escape(s:get_visual_selection(), '\').'\>'
     else
-        if getline(".")[col(".")-1] !~# '[[:punct:][:blank:]]' 
+        "Decho 'current char under cursor: '. getline(".")[col(".")-1]
+        if getline(".")[col(".")-1] =~# '[[:alnum:]]' 
             return '\V\<'.escape(expand('<cword>'), '\').'\>'
         endif
     endif
@@ -83,9 +85,11 @@ function! s:matchmake(needle)
     endif
 
     if empty(a:needle)
+        "Decho "Empty needle: " . a:needle
         call s:matchunmake()
         return
     endif
+    "Decho "Current needle: " . a:needle
 
     if !s:is_new_needle(a:needle)
         return
