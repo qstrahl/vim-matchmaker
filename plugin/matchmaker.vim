@@ -69,7 +69,7 @@ function! s:default_needle()
         return '\V\<'.escape(s:get_visual_selection(), '\').'\>'
     else
         "Decho 'current char under cursor: '. getline(".")[col(".")-1]
-        if getline(".")[col(".")-1] =~# '[[:alnum:]]' 
+        if getline(".")[col(".")-1] =~# '\k' 
             return '\V\<'.escape(expand('<cword>'), '\').'\>'
         endif
     endif
