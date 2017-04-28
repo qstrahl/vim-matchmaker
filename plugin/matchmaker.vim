@@ -6,8 +6,9 @@ endif
 
 let s:enabled = 0
 let s:matchpriority = 10
+let g:matchmaker_bg_color = get(g:, 'matchmaker_bg_color', '#dddddd')
 
-hi default Matchmaker term=underline    ctermbg=238     guibg=#dddddd
+exec 'hi default Matchmaker term=underline    ctermbg=238     guibg=' . g:matchmaker_bg_color
 
 " }}}
 

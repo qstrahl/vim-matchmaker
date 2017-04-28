@@ -19,6 +19,9 @@ Also, I like it more.
 Add `let g:matchmaker_enable_startup = 1` to your `~/.vimrc` to enable
 Matchmaker when vim starts.
 
+Add for example: `let g:matchmaker_bg_color = '#404040'` to add custom
+background color
+
 #Contributing
 
 This project uses the [git 
