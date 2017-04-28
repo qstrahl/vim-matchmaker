@@ -1,8 +1,8 @@
-#Matchmaker v0.2.1
+# Matchmaker v0.2.1
 
 Highlight matches for the word under the cursor.
 
-#Usage
+# Usage
 
 * `:Matchmaker` turns it on
 * `:Matchmaker!` turns it off
@@ -14,20 +14,20 @@ does, the new usage will look like `:Matchmaker on` / `:Matchmaker off`.
 maybe `:Matchmaker someOtherMatchingMethod` to change the matching behaviour.
 Also, I like it more.
 
-#Configuration
+# Configuration
 
 Add `let g:matchmaker_enable_startup = 1` to your `~/.vimrc` to enable
 Matchmaker when vim starts.
 
-#Contributing
+# Contributing
 
-This project uses the [git 
-flow](http://nvie.com/posts/a-successful-git-branching-model/) model for 
-development. There's [a handy git module for git 
-flow](//github.com/nvie/gitflow). If you'd like to be added as a contributor, 
-make some well-formatted pull requests (against the `develop` branch) and let 
+This project uses the [git
+flow](http://nvie.com/posts/a-successful-git-branching-model/) model for
+development. There's [a handy git module for git
+flow](//github.com/nvie/gitflow). If you'd like to be added as a contributor,
+make some well-formatted pull requests (against the `develop` branch) and let
 me know.
 
-#License
+# License
 
 Same as Vim; see `:help license`
